@@ -18,7 +18,7 @@ def zetanize(response):
         forms[num]['action'] = d(e(page.group(1))) if page else ''
         forms[num]['method'] = d(e(method.group(1)).lower()) if method else 'get'
         forms[num]['inputs'] = []
-        inputs = re.findall(r'(?i)(?s)<input.*?>', response)
+        inputs = re.findall(r'(?i)(?s)<input.*?>', match)
         for inp in inputs:
             inpName = re.search(r'(?i)name=[\'"](.*?)[\'"]', inp)
             if inpName:
